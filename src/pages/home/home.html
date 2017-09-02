@@ -1,18 +1,46 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="primary">
+    <ion-title class="Title">Venta Movil (avplapaz4228)</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content padding="">
+  <img class="logo" src="assets/imgs/pil.png" alt="logo">
+  <form novalidate [formGroup]="loginForm" (ngSubmit)="doLogin( $event )">
+    <ion-list>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+      <ion-item>
+        <ion-label floating>Usuario: </ion-label>
+        <ion-input formControlName="usuario"></ion-input>
+        <ion-item *ngIf="loginForm.get('usuario').errors && loginForm.get('usuario').dirty">
+            <p *ngIf="loginForm.get('usuario').hasError('required')" ion-text color="danger">Este campo es requerido.</p>
+            <p *ngIf="loginForm.get('usuario').hasError('minlength')" ion-text color="danger">Minimo tiene que ser de 6 caracteres.</p>
+          </ion-item>
+      </ion-item>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+      <ion-item>
+        <ion-label floating>Password: </ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="loginForm.get('password').errors && loginForm.get('password').dirty">
+        <p *ngIf="loginForm.get('password').hasError('required')" ion-text color="danger">Este campo es requerido.</p>
+        <p *ngIf="loginForm.get('password').hasError('minlength')" ion-text color="danger">Minimo tiene que ser de 6 caracteres.</p>
+      </ion-item>
+    </ion-list>
+
+    <div padding>
+
+    <button block ion-button round type="submit" icon-left>
+      <ion-icon name="key"></ion-icon>
+        Ingresar
+      </button>
+  </div>
+
+  </form>
 </ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <a  ref="">Acerca de..</a>
+    </ion-toolbar>
+  </ion-footer>
+    
