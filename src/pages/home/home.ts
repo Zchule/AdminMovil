@@ -24,18 +24,28 @@ export class HomePage {
     ionViewDidEnter() {
       this.menuCtrl.enable(false, 'menuAdmin');
     }
+
+    acerca(){
+      this.navCtrl.setRoot("AcercaDePage");
+    }
     
     doLogin( event: Event ){
       event.preventDefault();
   
-      let load = this.loadingCtrl.create({
-        dismissOnPageChange: true,
-      });
-      load.present();
       let usuario = this.loginForm.value.usuario;
       let password = this.loginForm.value.password;
       if(usuario == "admin" && password == "123456"){
         this.navCtrl.setRoot("AdmSuperPage");
+      }else{
+        let alert = this.alertCtrl.create({
+          title: "Datos Invalidos",
+          message: "Revise sus Datos",
+          buttons: [{
+            text: "Ok",
+            role: 'cancel'
+          }]
+        });
+        alert.present();
       }
       
     }
