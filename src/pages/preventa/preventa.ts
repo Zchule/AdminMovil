@@ -27,7 +27,7 @@ export class PreventaPage {
     console.log("Search");
   }
   addPreventa(){
-    let modal = this.modalCtrl.create('InfoPage');
+    let modal = this.modalCtrl.create('RegisterPage');
     modal.present();
   }
   goToMapPage(){

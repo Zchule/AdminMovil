@@ -7,8 +7,8 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
 import { CreatePage } from '../pages/create/create';
-import { PerfilPage } from '../pages/perfil/perfil';
 import { PreventaPage } from '../pages/preventa/preventa';
+
 import { AutoVentaPage } from '../pages/auto-venta/auto-venta';
 import { InfoMapPage } from '../pages/info-map/info-map';
 
@@ -37,7 +37,6 @@ const configFirebase ={
     HomePage,
     CreatePage,
     ListPage,
-    PerfilPage,
     PreventaPage,
     AutoVentaPage,
     InfoMapPage
@@ -54,7 +53,6 @@ const configFirebase ={
     HomePage,
     CreatePage,
     ListPage,
-    PerfilPage,
     PreventaPage,
     AutoVentaPage,
     InfoMapPage
