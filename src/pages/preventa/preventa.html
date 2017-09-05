@@ -1,12 +1,34 @@
 <ion-header>
   <ion-navbar color="primary">
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
     <ion-title class="Title">Preventa</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons right>
+      <button ion-button icon-only>
+        <ion-icon name="locate" (click)="goToMapPage()"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="addPreventa()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
+  <ion-toolbar color="primary">
+    <ion-searchbar debounce="400" showCancelButton="true" (input)="search($event)"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content>
+  <ion-card tappable *ngFor="let preventa of preventasShow; let i = index" (click)="goToMapPage()">
+    <!--<img [src]="preventa.photo">-->
+    <ion-card-content>
+      <ion-card-title>
+        {{ preventa.name }}
+      </ion-card-title>
+      <p><strong>Apellido:</strong> {{ preventa.apPat }}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+
