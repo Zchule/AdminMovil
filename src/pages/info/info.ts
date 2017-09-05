@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -10,6 +9,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class InfoPage {
 
   constructor(
+    private viewCtrl: ViewController,
     public navCtrl: NavController, 
     public navParams: NavParams
     ) {
@@ -17,6 +17,11 @@ export class InfoPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InfoPage');
+  }
+
+  close(){
+    
+    this.viewCtrl.dismiss();
   }
 
 }

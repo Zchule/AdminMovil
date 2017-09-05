@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NavController, NavParams, AlertController, LoadingController, MenuController} from 'ionic-angular';
+import { NavController, NavParams, AlertController, ModalController, LoadingController, MenuController} from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -16,7 +16,8 @@ export class HomePage {
       public formBuilder: FormBuilder,
       public alertCtrl: AlertController, 
       public loadingCtrl: LoadingController,
-      public menuCtrl: MenuController
+      public menuCtrl: MenuController,
+      public modalCtrl: ModalController
     ) {
       this.loginForm = this.makeLoginForm();
     }
@@ -25,8 +26,9 @@ export class HomePage {
       this.menuCtrl.enable(false, 'menuAdmin');
     }
 
-    acerca(){
-      this.navCtrl.setRoot("AcercaDePage");
+    info(){
+      let modal = this.modalCtrl.create('InfoPage');
+      modal.present();
     }
     
     doLogin( event: Event ){

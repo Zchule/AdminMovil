@@ -6,6 +6,11 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
+import { PerfilPage } from '../pages/perfil/perfil';
+import { PreventaPage } from '../pages/preventa/preventa';
+import { AutoVentaPage } from '../pages/auto-venta/auto-venta';
+import { InfoMapPage } from '../pages/info-map/info-map';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -16,7 +21,11 @@ import { GoogleMaps } from '@ionic-native/google-maps';
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    PerfilPage,
+    PreventaPage,
+    AutoVentaPage,
+    InfoMapPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +35,11 @@ import { GoogleMaps } from '@ionic-native/google-maps';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    PerfilPage,
+    PreventaPage,
+    AutoVentaPage,
+    InfoMapPage
   ],
   providers: [
     StatusBar,
