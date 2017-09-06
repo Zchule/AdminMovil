@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, MenuController } from 'ionic-angular';
+import { IonicPage, NavController, MenuController, AlertController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -10,7 +10,8 @@ export class AdmSuperPage {
  
   constructor(
     public navCtrl: NavController, 
-    public menuCtrl: MenuController
+    public menuCtrl: MenuController,
+    public alertCtrl: AlertController
 
   ) {
   }
@@ -22,5 +23,7 @@ export class AdmSuperPage {
   ionViewDidEnter() {
     this.menuCtrl.enable(true, 'menuAdmin');
   }  
-  
+
+  options(){
+  }
 }
