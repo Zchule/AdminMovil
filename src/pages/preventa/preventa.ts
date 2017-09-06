@@ -32,6 +32,7 @@ export class PreventaPage {
     })
     
   }
+  
   addPreventa(){
     let modal = this.modalCtrl.create('CreatePage');
     modal.present();

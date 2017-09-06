@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 
+import { FirebaseListObservable } from 'angularfire2/database';
+import { DataService } from '../../providers/data.service';
 
 @IonicPage()
 @Component({
@@ -9,11 +11,31 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AutoVentaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  datos: FirebaseListObservable<any>;
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private dataService: DataService,
+    public loadCtrl: LoadingController
+  ) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AutoVentaPage');
+    let load = this.loadCtrl.create({
+      content: 'Cargando...'
+    });
+    load.present();
+    this.datos = this.dataService.getAll();
+    this.datos.subscribe(data=>{
+      load.dismiss(); 
+    })
+  }
+
+  goToMapPage(){
+    console.log("mapa");
+    this.navCtrl.push('InfoMapPage');
   }
 
 }
+
