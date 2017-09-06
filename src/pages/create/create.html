@@ -30,17 +30,23 @@
         <p *ngIf="preventaForm.get('apPat').hasError('required')" ion-text color="danger">Este campo es requerido.</p>
       </ion-item>
       
-      <div class="item item-text-wrap" style="text-align:center"> {{" *Registre Ubicación:"}}
-            <button ion-button icon-left color="dark" type="button">
-              <ion-icon name="ios-pin"></ion-icon>
-                Presione!
-          </button>
-      </div>
+      <div class="item item-text-wrap" style="text-align:center"> {{" *Registre la Ubicación del Pedido:"}}
+          <ion-grid>
+           <ion-row>
+            <ion-col col-6 offset-3>
+              <button ion-button icon-left color="dark" type="button" (click)="getPosition()">
+                <ion-icon name="ios-pin"></ion-icon>
+                  Presione!
+            </button>
+          </ion-col>
+          </ion-row>
+         </ion-grid>
+        </div>
 
     </ion-list>
 
     <div padding>
-      <button block ion-button color="primary" type="submit" icon-left [disabled]="PreventaForm.invalid">
+      <button block ion-button color="primary" type="submit" icon-left [disabled]="preventaForm.invalid">
         Guardar
       </button>
     </div>

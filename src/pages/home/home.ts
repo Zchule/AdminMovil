@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NavController, NavParams, AlertController, ModalController, LoadingController, MenuController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, ModalController, LoadingController, MenuController} from 'ionic-angular';
 
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'

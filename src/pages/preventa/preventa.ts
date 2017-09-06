@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, ModalController} from 'ionic-angular';
+import { IonicPage, NavController, ModalController, LoadingController} from 'ionic-angular';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 import { DataService } from '../../providers/data.service';
 
@@ -10,21 +11,26 @@ import { DataService } from '../../providers/data.service';
 })
 export class PreventaPage {
 
-  preventasShow: any[] = [];
+  datos: FirebaseListObservable<any>;
 
   constructor(
     private navCtrl: NavController,
     private dataService: DataService,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    public loadCtrl: LoadingController
     ) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PreventaPage');
-    this.dataService.getAll();
-  }
-  search(event: any){
-    console.log("Search");
+    let load = this.loadCtrl.create({
+      content: 'Cargando...'
+    });
+    load.present();
+    this.datos = this.dataService.getAll();
+    this.datos.subscribe(data=>{
+      load.dismiss(); 
+    })
+    
   }
   addPreventa(){
     let modal = this.modalCtrl.create('CreatePage');

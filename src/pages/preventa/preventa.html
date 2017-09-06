@@ -15,14 +15,14 @@
 </ion-header>
 
 <ion-content>
-  <ion-card tappable *ngFor="let preventa of preventasShow; let i = index" (click)="goToMapPage()">
-    <!--<img [src]="preventa.photo">-->
-    <ion-card-content>
-      <ion-card-title>
-        {{ preventa.name }}
-      </ion-card-title>
-      <p><strong>Apellido:</strong> {{ preventa.apPat }}</p>
-    </ion-card-content>
-  </ion-card>
+    <ion-list>
+        <button ion-item *ngFor="let dato of datos | async; let i = index"  (click)="goToMapPage()">
+            <ion-icon name="map" item-right ></ion-icon>
+            <ion-thumbnail item-left>
+                <img [src]="dato.photo" alt="avatar">
+              </ion-thumbnail>
+          <h2>{{ dato.name }} {{ dato.apPat}}</h2>
+        </button>
+      </ion-list>
 </ion-content>
 

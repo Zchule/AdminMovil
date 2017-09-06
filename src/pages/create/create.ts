@@ -25,16 +25,18 @@ export class CreatePage {
     public dataService: DataService,
     public geolocation: Geolocation
     ) {
-      this.getPosition();
+      this.preventaForm = this.makeForm();    
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CreatePage');
+    this.getPosition();
   }
 
   savePreventa( event: Event ){
     event.preventDefault();
+    let photo = "assets/imgs/sinfoto.png"
       let data = this.preventaForm.value; 
+      data.photo = photo;
       this.dataService.create(data);
       let message = this.toastCtrl.create({
       message: 'Dato Registrado',

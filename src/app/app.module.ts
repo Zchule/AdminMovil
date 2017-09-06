@@ -3,12 +3,6 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { ListPage } from '../pages/list/list';
-
-import { PreventaPage } from '../pages/preventa/preventa';
-
-import { AutoVentaPage } from '../pages/auto-venta/auto-venta';
-import { InfoMapPage } from '../pages/info-map/info-map';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -31,11 +25,7 @@ const configFirebase ={
 
 @NgModule({
   declarations: [
-    MyApp,
-    ListPage,
-    PreventaPage,
-    AutoVentaPage,
-    InfoMapPage
+    MyApp
   ],
   imports: [
     BrowserModule,
@@ -45,11 +35,7 @@ const configFirebase ={
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    ListPage,
-    PreventaPage,
-    AutoVentaPage,
-    InfoMapPage
+    MyApp
   ],
   providers: [
     StatusBar,
