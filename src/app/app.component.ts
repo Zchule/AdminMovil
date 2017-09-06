@@ -4,7 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-
 import { PreventaPage } from '../pages/preventa/preventa';
 import { AutoVentaPage } from '../pages/auto-venta/auto-venta';
 import { InfoMapPage } from '../pages/info-map/info-map';
@@ -16,7 +15,7 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = 'HomePage';
 
   pages: Array<{title: string, component: any}>;
 

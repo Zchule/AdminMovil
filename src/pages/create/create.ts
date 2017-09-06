@@ -45,6 +45,7 @@ export class CreatePage {
     this.close();
     this.preventaForm = this.makeForm();
   }
+  
   getPosition(): any {
     let msn = "No Encontramos su ubicacion, revise su internet o su Gps";
     this.geolocation.getCurrentPosition().then((position) => {

@@ -3,10 +3,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
-import { CreatePage } from '../pages/create/create';
 import { PreventaPage } from '../pages/preventa/preventa';
 
 import { AutoVentaPage } from '../pages/auto-venta/auto-venta';
@@ -34,8 +32,6 @@ const configFirebase ={
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    CreatePage,
     ListPage,
     PreventaPage,
     AutoVentaPage,
@@ -50,8 +46,6 @@ const configFirebase ={
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    CreatePage,
     ListPage,
     PreventaPage,
     AutoVentaPage,
