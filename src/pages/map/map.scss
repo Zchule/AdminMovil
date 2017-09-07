@@ -11,6 +11,15 @@ page-map {
         opacity: 1;
       }
     }
+    .scroll{
+      height: calc(100% - 250px);
+    }
+    
+    #right-panel {
+      position:relative;
+      top:50px;
+      left:50px
+    }
   }
 
 }

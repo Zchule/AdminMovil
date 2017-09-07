@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Loading, LoadingController} from 'ionic-angular';
 
 import { Geolocation, Geoposition } from '@ionic-native/geolocation';
+
 import { DataService } from '../../providers/data.service';
 
 import { FirebaseListObservable } from 'angularfire2/database';
@@ -32,8 +33,6 @@ export class MapPage {
   }
 
   ionViewDidLoad() {
-    console.log(this.dato.latitude);
-    console.log(this.dato.longitude);
     let load = this.loadCtrl.create({
       content: 'Cargando...'
     });
@@ -47,7 +46,8 @@ export class MapPage {
       
       // create a new map by passing HTMLElement
       let mapEle: HTMLElement = document.getElementById('map');
-    
+      let panelEle: HTMLElement = document.getElementById('panel');
+      
       // create LatLng object
       let myLatLng = {lat: latitude, lng: longitude};
     
@@ -58,15 +58,16 @@ export class MapPage {
       });
     
       google.maps.event.addListenerOnce(this.map, 'idle', () => {
+        mapEle.classList.add('show-map');
         let marker = new google.maps.Marker({
           position: myLatLng,
           map: this.map,
           title: 'Hello World!'
         });
-        mapEle.classList.add('show-map');
-      });
+      }); 
       
     })
+  
   }
   
 }

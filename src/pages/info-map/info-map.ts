@@ -71,6 +71,9 @@ export class InfoMapPage {
   
     // create LatLng object
     this.myLatLng = {lat: latitude, lng: longitude};
+
+    var bounds = new google.maps.LatLngBounds();
+    bounds.extend(this.myLatLng);
   
     // create map
     this.map = new google.maps.Map(mapEle, {
