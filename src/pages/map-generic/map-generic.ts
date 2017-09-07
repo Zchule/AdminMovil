@@ -24,8 +24,7 @@ export class MapGenericPage {
     public navParams: NavParams,
     public geolocation: Geolocation
   ) {
-
-    this.directionsService = new google.maps.DirectionsService();
+    
     this.directionsDisplay = new google.maps.DirectionsRenderer();
     this.bounds = new google.maps.LatLngBounds();
 
@@ -70,7 +69,6 @@ export class MapGenericPage {
     console.log(latitude, longitude);
     // create a new map by passing HTMLElement
     let mapEle: HTMLElement = document.getElementById('map');
-    let panelEle: HTMLElement = document.getElementById('panel');
   
     // create LatLng object
     this.myLatLng = {lat: latitude, lng: longitude};
@@ -81,8 +79,7 @@ export class MapGenericPage {
       zoom: 12
     });
   
-    this.directionsDisplay.setMap(this.map);
-    this.directionsDisplay.setPanel(panelEle);
+    //this.directionsDisplay.setMap(this.map);
   
     google.maps.event.addListenerOnce(this.map, 'idle', () => {
       mapEle.classList.add('show-map');
@@ -101,23 +98,7 @@ export class MapGenericPage {
     });
   
     this.map.fitBounds(this.bounds);
- 
 
-    this.directionsService.route({
-      origin: new google.maps.LatLng(this.myLatLng.lat, this.myLatLng.lng),
-      destination: new google.maps.LatLng(this.myLatLng.lat, this.myLatLng.lng),
-      waypoints: this.waypoints,
-      optimizeWaypoints: true,
-      travelMode: google.maps.TravelMode.DRIVING,
-      avoidTolls: true
-    }, (response, status)=> {
-      if(status === google.maps.DirectionsStatus.OK) {
-        console.log(response);
-        this.directionsDisplay.setDirections(response);
-      }else{
-        alert('Could not display directions due to: ' + status);
-      }
-    });
 
   }
 
