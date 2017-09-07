@@ -16,13 +16,16 @@
 
 <ion-content>
     <ion-list>
-        <button ion-item *ngFor="let dato of datos | async; let i = index"  (click)="goToMapPage()">
+        <button ion-item *ngFor="let dato of datos | async; let i = index"  (click)="goToMapPage(dato)">
             <ion-icon name="map" item-right ></ion-icon>
             <ion-thumbnail item-left>
                 <img [src]="dato.photo" alt="avatar">
               </ion-thumbnail>
-          <h2>{{ dato.name }} {{ dato.apPat}}</h2>
+          <h2>{{ dato.name }} {{ dato.apPat}} </h2>
+          <p>{{dato.fecha | date: 'yyyy-MM-dd'}}</p>
+          
         </button>
+        
       </ion-list>
 </ion-content>
 

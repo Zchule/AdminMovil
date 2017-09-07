@@ -7,7 +7,9 @@ import { IonicPage, NavController, MenuController, AlertController } from 'ionic
   templateUrl: 'adm-super.html',
 })
 export class AdmSuperPage {
- 
+  
+  myDate: String = new Date().toISOString().substring(0, 10);
+
   constructor(
     public navCtrl: NavController, 
     public menuCtrl: MenuController,

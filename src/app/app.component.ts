@@ -25,8 +25,9 @@ export class MyApp {
       { title: 'Home', component: 'AdmSuperPage' },
       { title: 'Preventista', component: 'PreventaPage' },
       { title: 'Auto Venta', component: 'AutoVentaPage' },
-      { title: 'Mapa', component: 'MapGenericPage' },
+      { title: 'Mapa', component: 'InfoPage' },
       { title: 'Historial', component: 'ListPage' },
+      { title: 'Mapa Prueba', component: 'MapPage' },
       { title: 'Salir', component: 'HomePage' }
     ];
 

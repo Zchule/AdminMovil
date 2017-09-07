@@ -6,6 +6,8 @@ import { DataService } from '../../providers/data.service';
 
 import { Geolocation} from '@ionic-native/geolocation';
 
+import * as firebase from 'firebase';
+
 @IonicPage()
 @Component({
   selector: 'page-create',
@@ -34,9 +36,11 @@ export class CreatePage {
 
   savePreventa( event: Event ){
     event.preventDefault();
-    let photo = "assets/imgs/sinfoto.png"
+      let photo = "assets/imgs/sinfoto.png";
+      let fecha = firebase.database.ServerValue.TIMESTAMP;
       let data = this.preventaForm.value; 
       data.photo = photo;
+      data.fecha = fecha;
       this.dataService.create(data);
       let message = this.toastCtrl.create({
       message: 'Dato Registrado',

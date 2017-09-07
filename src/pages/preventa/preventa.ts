@@ -12,7 +12,6 @@ import { DataService } from '../../providers/data.service';
 export class PreventaPage {
 
   datos: FirebaseListObservable<any>;
-
   constructor(
     private navCtrl: NavController,
     private dataService: DataService,
@@ -32,14 +31,15 @@ export class PreventaPage {
     })
     
   }
-  
+
   addPreventa(){
     let modal = this.modalCtrl.create('CreatePage');
     modal.present();
   }
-  goToMapPage(){
-    console.log("mapa");
-    this.navCtrl.push('InfoMapPage');
+  goToMapPage(dato){
+    this.navCtrl.push('MapPage', {
+      dato: dato
+    });
   }
 
 }
