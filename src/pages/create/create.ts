@@ -16,7 +16,6 @@ import * as firebase from 'firebase';
 export class CreatePage {
 
   preventaForm: FormGroup;
-  preventa: any= null;
 
   constructor(
     public viewCtrl: ViewController,

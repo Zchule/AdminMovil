@@ -14,6 +14,9 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { DataService } from '../providers/data.service';
 
+import { SQLite } from '@ionic-native/sqlite';
+import { SqlService } from '../providers/sql.service';
+
 const configFirebase ={
   apiKey: "AIzaSyCHkCq2n-zXmNHb5BpfrMKz6qSGBhUkSOw",
   authDomain: "dmimovil-f7e74.firebaseapp.com",
@@ -42,8 +45,10 @@ const configFirebase ={
     SplashScreen,
     Geolocation,
     GoogleMaps,
+    SQLite,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DataService
+    DataService,
+    SqlService
   ]
 })
 export class AppModule {}

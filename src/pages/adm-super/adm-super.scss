@@ -5,6 +5,9 @@ page-adm-super {
         width: 100%;
         text-align: center;
    }
+   .Title{
+    text-align: center;
+}
    button[ion-fab] {
     overflow: visible;
     position: relative;
@@ -15,7 +18,7 @@ page-adm-super {
         right: 40px;
 
         color: white;
-        background-color: rgba(0,0,0,0.7);
+        background-color: #1A367B;
         line-height: 24px;
         padding: 4px 8px;
         border-radius: 4px;

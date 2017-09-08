@@ -38,7 +38,7 @@ export class HomePage {
       let password = this.loginForm.value.password;
       if(usuario == "admin" && password == "123456"){
         this.navCtrl.setRoot("AdmSuperPage");
-      }else{
+      }else{ 
         let alert = this.alertCtrl.create({
           title: "Datos Invalidos",
           message: "Revise sus Datos",
@@ -49,7 +49,7 @@ export class HomePage {
         });
         alert.present();
       }
-      
+
     }
   
     private makeLoginForm(){
